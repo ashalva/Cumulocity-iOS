@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  SensorStreamming
+
+  Created by Shalva Avanashvili on 04/11/2017.
+  Copyright © 2017 Shalva Avanashvili. All rights reserved.
+*/
+
+"error.generic"                             = "There was some error, sorry for inconvenience";
+"error.subscription.operation"              = "Error on operations subscription";
+
+"login.fields.should.be.filled"             = "All fields should be filled";
+"login.credentials.not.correct"             = "Credentials not correct, please check it and try again";
+
+"home.device.has.already.been.created"      = "Device has already been created";
+"home.device.has.already.been.registered"   = "Device has already been registered";
+"home.device.created"                       = "Device created";
+"home.device.registered"                    = "Device registered";
+"home.registering.failed"                   = "Registering failed";
+
+"sensor.values.not.equal.names"             = "Number of values does not equal number of field names";
+"sensor.already.exists"                     = "Sensor with same name and type already exists";
+"sensor.doesnot.exist"                      = "Sensor with provided name does not exist";
+
+
+
