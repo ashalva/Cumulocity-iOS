@@ -53,7 +53,7 @@ class Headers {
     }
     
     private static func basicAuthHeaderVal() -> String? {
-        let val = "avanashvili5@gmail.com:Kalmistari1"
+        let val = "\(Settings.UserName):\(Settings.Password)"
         if let data = val.data(using: .utf8) {
             return data.base64EncodedString()
         }
