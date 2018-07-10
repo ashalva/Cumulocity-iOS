@@ -16,21 +16,16 @@ class LoginViewController : BaseViewController {
         super.viewDidLoad()
         
         #if DEBUG
-            instanceUrlTextField.text = "https://iot.cs.ut.ee"
+            instanceUrlTextField.text = "https://iosapp.cumulocity.com"
         #endif
         
         navigationItem.title = "Login"
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        let url = URL(string: "minuntelia://")!
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        }
-        return
-        
-        guard  let instanceUrl = instanceUrlTextField.text else {
+        guard let instanceUrl = instanceUrlTextField.text else {
             showError(text: Localisation.local("error.gneric"))
+            
             return
         }
         

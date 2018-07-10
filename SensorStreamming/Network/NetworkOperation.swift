@@ -19,7 +19,12 @@ class NetworkOperation<T: FromRemoteSource> : AsyncOperation {
     
     weak var request: Alamofire.Request?
     
-    init(type: HTTPMethod = .get, urlString: String, params: [String: Any] = [:], textParameters: String? = nil, headers: HTTPHeaders? = nil, completion: @escaping (NetworkResponse<T>) -> Void) {
+    init(type: HTTPMethod = .get,
+         urlString: String,
+         params: [String: Any] = [:],
+         textParameters: String? = nil,
+         headers: HTTPHeaders? = nil,
+         completion: @escaping (NetworkResponse<T>) -> Void) {
         self.urlString = urlString
         self.completion = completion
         self.methodType = type

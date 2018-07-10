@@ -36,7 +36,7 @@ class HomeViewController: BaseViewController {
         loadingIndicator.startAnimating()
         
         //Requesting device credentials
-        Session.shared.getCredentials () {
+//        Session.shared.getCredentials () {
             CumulocitySensorController.shared.delegate = self
             CumulocitySensorController.shared.registerDevice()
             
@@ -44,7 +44,7 @@ class HomeViewController: BaseViewController {
             
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.isHidden = true
-        }
+//        }
     }
     
     

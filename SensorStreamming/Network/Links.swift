@@ -10,7 +10,7 @@ import Foundation
 
 
 class Links {
-    static let BASE_URL = "https://testing.iot.cs.ut.ee"
+    static let BASE_URL = "https://iosapp.cumulocity.com"
     
     var restURL: URL!
     

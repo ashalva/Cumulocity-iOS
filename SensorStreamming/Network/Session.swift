@@ -235,7 +235,7 @@ extension Session {
     
     //checking if device is registered
     class func isDeviceRegistered(callback: @escaping (Bool) -> Void) {
-        let op = NetworkOperation(urlString: "\(Links.BASE_URL)/identity/externalIds/c8y_Serial/\(Device.externalId)") {
+        let op = NetworkOperation(urlString: "\(Links.BASE_URL)/identity/externalIds/c8y_Serial/\(Device.externalId)", headers: Headers.get()) {
             (result: NetworkResponse<RegisteredDevice>) in
             
             guard let _ = result.value else {

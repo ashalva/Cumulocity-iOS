@@ -17,7 +17,7 @@ class Headers {
     }
     static func get() -> HTTPHeaders {
         return [
-            "Authorization" : "Basic \(basicAuthHeaderVal() ?? "")" //Basic bWFkcGRlbW86bWFkcDIwMTc=
+            "Authorization" : "Basic \(basicAuthHeaderVal() ?? "")"
         ]
     }
     
@@ -53,7 +53,7 @@ class Headers {
     }
     
     private static func basicAuthHeaderVal() -> String? {
-        let val = "madpdemo:madp2017"
+        let val = "avanashvili5@gmail.com:Kalmistari1"
         if let data = val.data(using: .utf8) {
             return data.base64EncodedString()
         }
