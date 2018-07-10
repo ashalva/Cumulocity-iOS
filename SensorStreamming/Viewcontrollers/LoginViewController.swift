@@ -40,7 +40,7 @@ class LoginViewController : BaseViewController {
             return
         }
         
-        //assigning values to our settings
+        //assigning values to the settings
         Settings.InstanceUrl = instanceUrl
         Settings.UserName = userName
         Settings.Password = password

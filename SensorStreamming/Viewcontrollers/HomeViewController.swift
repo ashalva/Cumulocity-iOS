@@ -81,7 +81,6 @@ class HomeViewController: BaseViewController {
 
 //Delegate for interface controller, delegate methods are called from controller: CumulocitySensorController.swift class
 extension HomeViewController: CumulocityControllerDelegate {
-    
     func deviceRegistered() {
         //updating UI
         self.deviceIdLabel.text = "deviceId: \(Session.registeredDevice?.managedObject.id ?? "")"
@@ -114,7 +113,6 @@ extension HomeViewController: CumulocityControllerDelegate {
 
 //Delegate which controls when the sensor data is retrieved, methods are called from Motion.swift class
 extension HomeViewController : MotionDelegate {
-    
     //rotation data retrieved
     func rotationDataFetched(rotValue: RotationValue) {
         DispatchQueue.main.async {
