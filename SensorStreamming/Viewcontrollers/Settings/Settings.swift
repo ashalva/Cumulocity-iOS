@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//
+
 class Settings {
     static var GyroEnabled: Bool = true
     static var AccelerometerEnable: Bool = true
