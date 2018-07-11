@@ -18,6 +18,7 @@
 		266413381FC0A81A0084B5F7 /* MagneticSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266413371FC0A81A0084B5F7 /* MagneticSensor.swift */; };
 		2664133C1FC0AAE40084B5F7 /* RotationSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2664133B1FC0AAE40084B5F7 /* RotationSensor.swift */; };
 		2664133E1FC1D5270084B5F7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2664133D1FC1D5270084B5F7 /* String+Extensions.swift */; };
+		2673127820F65A9300BEB12B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673127720F65A9300BEB12B /* MapViewController.swift */; };
 		26856ED01FAE120000C3A69F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26856ECF1FAE120000C3A69F /* LoginViewController.swift */; };
 		26856EDD1FAE1A4D00C3A69F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26856EDB1FAE1A4D00C3A69F /* Localizable.strings */; };
 		269E02E11FC30804006CE058 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E02E01FC30804006CE058 /* BaseViewController.swift */; };
@@ -63,6 +64,7 @@
 		266413371FC0A81A0084B5F7 /* MagneticSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MagneticSensor.swift; path = SensorHelpers/MagneticSensor.swift; sourceTree = "<group>"; };
 		2664133B1FC0AAE40084B5F7 /* RotationSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RotationSensor.swift; path = SensorHelpers/RotationSensor.swift; sourceTree = "<group>"; };
 		2664133D1FC1D5270084B5F7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Extensions.swift"; path = "Extensions/String+Extensions.swift"; sourceTree = "<group>"; };
+		2673127720F65A9300BEB12B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Viewcontrollers/MapViewController.swift; sourceTree = "<group>"; };
 		26856ECF1FAE120000C3A69F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		26856ED31FAE191F00C3A69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26856ED41FAE191F00C3A69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				26F73F961F7C0D9F0013B91B /* HomeViewController.swift */,
 				26856ECF1FAE120000C3A69F /* LoginViewController.swift */,
 				269E02E01FC30804006CE058 /* BaseViewController.swift */,
+				2673127720F65A9300BEB12B /* MapViewController.swift */,
 			);
 			name = Viewcontrollers;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				26856ED01FAE120000C3A69F /* LoginViewController.swift in Sources */,
 				26F73F9A1F7C0DC30013B91B /* AppDelegate.swift in Sources */,
 				266413381FC0A81A0084B5F7 /* MagneticSensor.swift in Sources */,
+				2673127820F65A9300BEB12B /* MapViewController.swift in Sources */,
 				269E02E11FC30804006CE058 /* BaseViewController.swift in Sources */,
 				26F73F971F7C0D9F0013B91B /* HomeViewController.swift in Sources */,
 				26F73FB01F7C19940013B91B /* NSLock+Extensions.swift in Sources */,

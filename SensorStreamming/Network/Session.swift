@@ -455,7 +455,11 @@ extension Session {
         var headers = Headers.authHeader()
         headers["X-Id"] = xid
         
-        let textParameter = "200,\(measurements["x"] ?? measurements["p"] ?? 0),\(measurements["y"] ?? measurements["a"] ?? 0),\(measurements["z"] ?? measurements["r"] ?? 0),\(Session.registeredDevice?.managedObject.id ?? "")"
+        let firstParameter = measurements["x"] ?? measurements["p"] ?? 0
+        let secondParameter = measurements["y"] ?? measurements["a"] ?? 0
+        let thirdParameter = measurements["z"] ?? measurements["r"] ?? 0
+        
+        let textParameter = "200,\(firstParameter),\(secondParameter),\(thirdParameter),\(Session.registeredDevice?.managedObject.id ?? "")"
         
         let op = NetworkOperation(type: .post,
                                     urlString: "\(Links.BASE_URL)/s",
