@@ -335,12 +335,41 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bdc-7f-g81">
+                                        <rect key="frame" x="0.0" y="216" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bdc-7f-g81" id="UCK-xp-ei9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtF-un-7rL">
+                                                    <rect key="frame" x="15" y="11.5" width="236" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vws-WD-thH">
+                                                    <rect key="frame" x="301" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="locationSwitchChanged:" destination="5uW-yz-gU7" eventType="valueChanged" id="bjw-73-QCN"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CtF-un-7rL" firstAttribute="centerY" secondItem="UCK-xp-ei9" secondAttribute="centerY" id="6rc-lK-8Yq"/>
+                                                <constraint firstItem="Vws-WD-thH" firstAttribute="centerY" secondItem="UCK-xp-ei9" secondAttribute="centerY" id="7wm-gl-J4j"/>
+                                                <constraint firstItem="CtF-un-7rL" firstAttribute="leading" secondItem="UCK-xp-ei9" secondAttribute="leading" constant="15" id="Isk-K5-F2a"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vws-WD-thH" secondAttribute="trailing" constant="25" id="htk-xK-W6b"/>
+                                                <constraint firstItem="Vws-WD-thH" firstAttribute="leading" secondItem="CtF-un-7rL" secondAttribute="trailing" constant="50" id="tk1-J9-4Fb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Credentials" id="79y-4k-d5i">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="6nh-vI-XEI">
-                                        <rect key="frame" x="0.0" y="256" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="300" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6nh-vI-XEI" id="egE-ju-iy6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -375,6 +404,7 @@
                         <outlet property="accSwitch" destination="uCt-WF-vDI" id="uHM-RJ-5gQ"/>
                         <outlet property="gyroSwitch" destination="csQ-h5-6o6" id="oGB-GC-OxH"/>
                         <outlet property="instanceUrlLabel" destination="7Jg-JE-utM" id="b4p-4u-dyF"/>
+                        <outlet property="locationSwitch" destination="Vws-WD-thH" id="a6X-U7-85B"/>
                         <outlet property="magnometerSwitch" destination="Yu6-0n-D8d" id="AdV-q9-qmc"/>
                         <outlet property="rotationSwitch" destination="IWH-jh-JZT" id="4w0-S9-dJz"/>
                     </connections>
@@ -425,6 +455,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jA3-ou-RS7"/>
+                    <connections>
+                        <outlet property="mapView" destination="uTq-Mj-iY4" id="wCe-yR-asH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y25-Cl-pmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

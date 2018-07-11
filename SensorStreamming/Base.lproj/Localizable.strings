@@ -22,5 +22,7 @@
 "sensor.already.exists"                     = "Sensor with same name and type already exists";
 "sensor.doesnot.exist"                      = "Sensor with provided name does not exist";
 
+"map.location.failed"                       = "Failed to get current location.";
+
 
 

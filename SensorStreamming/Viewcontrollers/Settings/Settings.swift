@@ -13,6 +13,7 @@ class Settings {
     static var AccelerometerEnable: Bool = true
     static var RotationEnabled: Bool = true
     static var MagneticFieldEnabled: Bool = true
+    static var LocationEnabled: Bool = true
     
     static var UserName: String = ""
     static var Password: String = ""

@@ -16,6 +16,7 @@ class SettingsViewController : UITableViewController {
     @IBOutlet weak var accSwitch: UISwitch!
     @IBOutlet weak var gyroSwitch: UISwitch!
     @IBOutlet weak var instanceUrlLabel: UILabel!
+    @IBOutlet weak var locationSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,12 @@ class SettingsViewController : UITableViewController {
         rotationSwitch.addTarget(self, action: #selector(rotationSwitchChanged), for: UIControlEvents.valueChanged)
         
         instanceUrlLabel.text = "Instance URL: \(Settings.InstanceUrl)"
+        
+        locationSwitch.isOn = Settings.LocationEnabled
+    }
+    
+    @IBAction func locationSwitchChanged(_ sender: Any) {
+        Settings.LocationEnabled = locationSwitch.isOn
     }
     
     @objc
