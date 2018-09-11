@@ -10,6 +10,7 @@
 		2633F1CD1F86D38E00B57C0E /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633F1CC1F86D38E00B57C0E /* Motion.swift */; };
 		2633F1CF1F86D8C300B57C0E /* GyroscopeValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633F1CE1F86D8C300B57C0E /* GyroscopeValue.swift */; };
 		2633F1D11F86D8D100B57C0E /* AccelerometerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2633F1D01F86D8D100B57C0E /* AccelerometerValue.swift */; };
+		264237D321482FBD00E757C9 /* LineChartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264237D221482FBD00E757C9 /* LineChartPresenter.swift */; };
 		264B2D901F7C0C3A002F08E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264B2D8E1F7C0C3A002F08E0 /* Main.storyboard */; };
 		264B2D921F7C0C3A002F08E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264B2D911F7C0C3A002F08E0 /* Assets.xcassets */; };
 		264B2D951F7C0C3A002F08E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264B2D931F7C0C3A002F08E0 /* LaunchScreen.storyboard */; };
@@ -56,6 +57,7 @@
 		2633F1CC1F86D38E00B57C0E /* Motion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Motion.swift; path = SensorHelpers/Motion.swift; sourceTree = "<group>"; };
 		2633F1CE1F86D8C300B57C0E /* GyroscopeValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GyroscopeValue.swift; path = Network/Data/GyroscopeValue.swift; sourceTree = "<group>"; };
 		2633F1D01F86D8D100B57C0E /* AccelerometerValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccelerometerValue.swift; path = Network/Data/AccelerometerValue.swift; sourceTree = "<group>"; };
+		264237D221482FBD00E757C9 /* LineChartPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineChartPresenter.swift; path = Helpers/LineChartPresenter.swift; sourceTree = "<group>"; };
 		264B2D871F7C0C3A002F08E0 /* SensorStreamming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorStreamming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		264B2D911F7C0C3A002F08E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		264B2D961F7C0C3A002F08E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		26856EDE1FAE1B6D00C3A69F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				264237D221482FBD00E757C9 /* LineChartPresenter.swift */,
 				269E02E71FC3092E006CE058 /* Localisation.swift */,
 			);
 			name = Helpers;
@@ -291,7 +294,6 @@
 				264B2D841F7C0C3A002F08E0 /* Frameworks */,
 				264B2D851F7C0C3A002F08E0 /* Resources */,
 				51B30755A7FAEE08C83C3F9E /* [CP] Embed Pods Frameworks */,
-				BE3CC84227684696DBC3ACFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -359,9 +361,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SensorStreamming/Pods-SensorStreamming-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -374,28 +383,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorStreamming-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BE3CC84227684696DBC3ACFB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SensorStreamming/Pods-SensorStreamming-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -430,6 +427,7 @@
 				269E02F41FC6CBF5006CE058 /* Subscribtion.swift in Sources */,
 				26F73FAE1F7C19840013B91B /* FromRemoteSource.swift in Sources */,
 				264C383E1F8A675D0012A528 /* Double+Extensions.swift in Sources */,
+				264237D321482FBD00E757C9 /* LineChartPresenter.swift in Sources */,
 				26F73F9D1F7C0EC30013B91B /* Session.swift in Sources */,
 				2633F1D11F86D8D100B57C0E /* AccelerometerValue.swift in Sources */,
 				26E63D091FA687D200970254 /* RotationValue.swift in Sources */,

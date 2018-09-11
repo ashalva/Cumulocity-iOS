@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,12 +65,17 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0e3-OM-fFL">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kl-ea-GYC">
+                                <rect key="frame" x="16" y="378" width="343" height="208"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Cbp-EA-r6p" secondAttribute="trailing" constant="15" id="24l-FU-lJW"/>
                             <constraint firstItem="0e3-OM-fFL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Ry-eK-ma0"/>
                             <constraint firstItem="fo3-Dw-jWq" firstAttribute="top" secondItem="Cbp-EA-r6p" secondAttribute="bottom" constant="15" id="774-aI-Ylo"/>
+                            <constraint firstItem="8kl-ea-GYC" firstAttribute="top" secondItem="eUt-MI-yJk" secondAttribute="bottom" constant="62" id="96y-Sm-yyM"/>
                             <constraint firstItem="7Ua-dT-pJ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="BAc-kS-k0y"/>
                             <constraint firstItem="VgP-hM-Pcj" firstAttribute="top" secondItem="7Ua-dT-pJ3" secondAttribute="bottom" constant="15" id="BJ0-Jk-IPo"/>
                             <constraint firstAttribute="trailing" secondItem="VgP-hM-Pcj" secondAttribute="trailing" constant="15" id="BNa-Qh-Gg9"/>
@@ -84,10 +88,13 @@
                             <constraint firstItem="Cbp-EA-r6p" firstAttribute="top" secondItem="QIL-qc-gpx" secondAttribute="bottom" constant="15" id="aOT-Dn-cmt"/>
                             <constraint firstItem="QIL-qc-gpx" firstAttribute="top" secondItem="eLT-DY-nlE" secondAttribute="bottom" constant="15" id="abQ-HL-e0G"/>
                             <constraint firstItem="eLT-DY-nlE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="fRB-GG-r96"/>
+                            <constraint firstAttribute="trailing" secondItem="8kl-ea-GYC" secondAttribute="trailing" constant="16" id="fqK-kp-rhf"/>
                             <constraint firstAttribute="trailing" secondItem="QIL-qc-gpx" secondAttribute="trailing" constant="15" id="jwB-TA-aR0"/>
                             <constraint firstItem="Cbp-EA-r6p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="lnC-lV-qiy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8kl-ea-GYC" secondAttribute="bottom" constant="32" id="lst-Kt-btC"/>
                             <constraint firstItem="VgP-hM-Pcj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="mV5-Ws-jnl"/>
                             <constraint firstItem="fo3-Dw-jWq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="mfl-rS-0ea"/>
+                            <constraint firstItem="8kl-ea-GYC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="nGF-Io-fMe"/>
                             <constraint firstItem="0e3-OM-fFL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="peu-cx-CpG"/>
                             <constraint firstAttribute="trailing" secondItem="fo3-Dw-jWq" secondAttribute="trailing" constant="15" id="tVC-Vs-6ky"/>
                             <constraint firstItem="7Ua-dT-pJ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="uzq-Jo-SUE"/>
@@ -98,6 +105,7 @@
                     <navigationItem key="navigationItem" id="5p9-eD-oIi"/>
                     <connections>
                         <outlet property="accLabel" destination="eLT-DY-nlE" id="iqh-Z4-qeZ"/>
+                        <outlet property="accelerometerChartContainer" destination="8kl-ea-GYC" id="ar7-rg-aee"/>
                         <outlet property="createdStatusLabel" destination="7Ua-dT-pJ3" id="GVN-Cv-0y0"/>
                         <outlet property="deviceIdLabel" destination="eUt-MI-yJk" id="bqz-a9-60z"/>
                         <outlet property="gyroLabel" destination="QIL-qc-gpx" id="c4O-73-14y"/>

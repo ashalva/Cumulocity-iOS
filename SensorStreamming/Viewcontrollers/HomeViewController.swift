@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import Charts
 
 let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
 
@@ -28,6 +29,10 @@ class HomeViewController: BaseViewController {
     fileprivate var magneticSensor: MagneticSensor?
     fileprivate var rotationSensor: RotationSensor?
     
+    @IBOutlet weak var accelerometerChartContainer: UIView!
+    
+    fileprivate var accelerometerChartPresenter: LineChartPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,26 +40,24 @@ class HomeViewController: BaseViewController {
         
         loadingIndicator.startAnimating()
         
-        //Requesting device credentials
-//        Session.shared.getCredentials () {
-            CumulocitySensorController.shared.delegate = self
-            CumulocitySensorController.shared.registerDevice()
-            
-            Motion.shared.motionDelegate = self
-            
-            self.loadingIndicator.stopAnimating()
-            self.loadingIndicator.isHidden = true
-//        }
+        CumulocitySensorController.shared.delegate = self
+        CumulocitySensorController.shared.registerDevice()
+        
+        Motion.shared.motionDelegate = self
+        
+        loadingIndicator.stopAnimating()
+        loadingIndicator.isHidden = true
+        
+        setupAccelerometerChart()
     }
     
     
     private func startMeasuring() {
-        
         accSensor = AccelerometerSensor()
         accSensor?.register(sensorName: "acceleration",
                             sensorType: "c8y_Acceleration",
                             nameOfValues: ["x","y","z"],
-                            minimumTimeInterval: 0.5)
+                            minimumTimeInterval: 1.0)
         
         gyroSensor = GyroscopeSensor()
         gyroSensor?.register(sensorName: "gyroscope",
@@ -75,7 +78,13 @@ class HomeViewController: BaseViewController {
                                 minimumTimeInterval: 0.5)
         
         CumulocitySensorController.shared.addSensors(sensors: [accSensor!, gyroSensor!, magneticSensor!, rotationSensor!])
-        
+    }
+    
+    private func setupAccelerometerChart() {
+        let chartFrame = CGRect(x: 0, y: 0, width: accelerometerChartContainer.frame.width,
+                                height: accelerometerChartContainer.frame.height)
+        accelerometerChartPresenter = LineChartPresenter(chartFrame: chartFrame)
+        accelerometerChartContainer.addSubview(accelerometerChartPresenter.chart)
     }
 }
 
@@ -144,6 +153,10 @@ extension HomeViewController : MotionDelegate {
     func accDataFetched(accValue: AccelerometerValue) {
         DispatchQueue.main.async {
             self.accLabel.text = "acc: x: \(accValue.x.rounded(toPlaces: 2)), y: \(accValue.y.rounded(toPlaces: 2)), z: \(accValue.z.rounded(toPlaces: 2))"
+            
+            self.accelerometerChartPresenter.append(chartX: accValue.x.rounded(toPlaces: 2),
+                                                    chartY: accValue.y.rounded(toPlaces: 2),
+                                                    chartZ: accValue.z.rounded(toPlaces: 2))
         }
         
         accSensor?.sendData(values: ["x": accValue.x, "y": accValue.y,"z": accValue.z])

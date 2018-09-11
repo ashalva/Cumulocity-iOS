@@ -6,4 +6,5 @@ target 'SensorStreamming' do
     # Pods for SensorStreamming
     pod 'Alamofire', '~> 4.0'
     pod 'SwiftyJSON', '~> 3.1'
+    pod 'Charts'
 end
