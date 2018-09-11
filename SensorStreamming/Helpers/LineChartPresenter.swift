@@ -9,6 +9,7 @@
 import UIKit
 import Charts
 
+
 class LineChartPresenter {
     let chart: LineChartView!
     
@@ -18,9 +19,11 @@ class LineChartPresenter {
     private var xData: [ChartDataEntry] = []
     private var yData: [ChartDataEntry] = []
     private var zData: [ChartDataEntry] = []
+    private let chartXLimit: Int
     
-    init(chartFrame: CGRect) {
-        chart = LineChartView(frame: chartFrame)
+    init(chartFrame: CGRect, chartXLimit: Int = 10) {
+        self.chart = LineChartView(frame: chartFrame)
+        self.chartXLimit = chartXLimit
     }
     
     func set(description: String) {
@@ -33,13 +36,24 @@ class LineChartPresenter {
                                                 constructZData(chartZ)])
         
         chart.data = lineData
-        
-        chart.setNeedsLayout()
+        if previousX > 5 {
+            chart.moveViewToX(previousX - 5)
+        }
         previousX += 1.0
     }
     
+    private func append(_ entry: ChartDataEntry, to entries: [ChartDataEntry]) -> [ChartDataEntry] {
+        var newEntries = entries
+        newEntries.append(entry)
+        
+        guard entries.count > chartXLimit else { return newEntries }
+        
+        newEntries.remove(at: 0)
+        return newEntries
+    }
+    
     private func constructXData(_ x: Double) -> LineChartDataSet {
-        xData.append(ChartDataEntry(x: previousX, y: x))
+        xData = append(ChartDataEntry(x: previousX, y: x), to: xData)
         let dataSet = LineChartDataSet(values: xData, label: "X")
         setStyle(for: dataSet)
         
@@ -47,7 +61,7 @@ class LineChartPresenter {
     }
     
     private func constructYData(_ y: Double) -> LineChartDataSet {
-        yData.append(ChartDataEntry(x: previousX, y: y))
+        yData = append(ChartDataEntry(x: previousX, y: y), to: yData)
         let dataSet = LineChartDataSet(values: yData, label: "Y")
         setStyle(for: dataSet, lineColor: .blue)
         
@@ -55,7 +69,7 @@ class LineChartPresenter {
     }
     
     private func constructZData(_ z: Double) -> LineChartDataSet {
-        zData.append(ChartDataEntry(x: previousX, y: z))
+        zData = append(ChartDataEntry(x: previousX, y: z), to: zData)
         let dataSet = LineChartDataSet(values: zData, label: "Z")
         setStyle(for: dataSet, lineColor: .red)
         

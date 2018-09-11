@@ -66,7 +66,7 @@
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kl-ea-GYC">
-                                <rect key="frame" x="16" y="378" width="343" height="208"/>
+                                <rect key="frame" x="16" y="348" width="343" height="238"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -75,7 +75,7 @@
                             <constraint firstAttribute="trailing" secondItem="Cbp-EA-r6p" secondAttribute="trailing" constant="15" id="24l-FU-lJW"/>
                             <constraint firstItem="0e3-OM-fFL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Ry-eK-ma0"/>
                             <constraint firstItem="fo3-Dw-jWq" firstAttribute="top" secondItem="Cbp-EA-r6p" secondAttribute="bottom" constant="15" id="774-aI-Ylo"/>
-                            <constraint firstItem="8kl-ea-GYC" firstAttribute="top" secondItem="eUt-MI-yJk" secondAttribute="bottom" constant="62" id="96y-Sm-yyM"/>
+                            <constraint firstItem="8kl-ea-GYC" firstAttribute="top" secondItem="eUt-MI-yJk" secondAttribute="bottom" constant="32" id="96y-Sm-yyM"/>
                             <constraint firstItem="7Ua-dT-pJ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="BAc-kS-k0y"/>
                             <constraint firstItem="VgP-hM-Pcj" firstAttribute="top" secondItem="7Ua-dT-pJ3" secondAttribute="bottom" constant="15" id="BJ0-Jk-IPo"/>
                             <constraint firstAttribute="trailing" secondItem="VgP-hM-Pcj" secondAttribute="trailing" constant="15" id="BNa-Qh-Gg9"/>
